@@ -13,3 +13,12 @@ body {
     background-size:80px 140px;
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
+
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(7, 7, 7);
+    border-radius: 25%;
+    display: inline-block;
+   }
