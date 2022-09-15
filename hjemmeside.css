@@ -14,7 +14,19 @@ body {
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
 
-
+h1{width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    align-content: center;
+   
+    border: 5px solid;
+    border-style: groove;
+    text-shadow: 2px 2px 5px rgb(28, 24, 24);
+    }
+    
+    
+    
+    
 .dot {
     height: 10px;
     width: 10px;
