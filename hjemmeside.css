@@ -37,15 +37,23 @@ h1{width: fit-content;
 
 .mainbody{
     font-family: 'Times New Roman', Times, serif;
-    width: 10vw;
+    width: 15vw;
     text-align: center;
     margin: 2vw auto;
     padding: 1vw;
     background-color: rgb(234, 233, 233);
     border: 1vw solid #000000ab;
     border-style: ridge;
+    
 }
 
+a:hover{
+    color: #ff0000ab;
+    text-decoration-color: #5d6cb9 ;
+    font-size:30px;
+    transition: all 700ms;
+    font-size-adjust: 10px
+}
 
 .container {
   border-top-left-radius: 37px 140px;
@@ -173,3 +181,5 @@ pre {
   background: #edeff5;
   padding: 20px;
 }
+
+
