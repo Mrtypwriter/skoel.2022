@@ -1,0 +1,33 @@
+body{
+    background-color: aqua;
+    text-align: center;
+}
+
+#hoved{
+    border: 1px;
+    
+}
+
+#meny{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-basis: auto;
+    flex-grow: inherit;
+    flex-shrink: 1;
+
+}
+
+
+a{
+    margin: 1vw;
+    padding: 30px;
+    border: 1px;
+    border-style: groove;
+    background-color: azure;
+    flex-wrap: wrap;
+    flex-basis: auto;
+    flex-grow: inherit;
+    flex-shrink: 1;
+}

@@ -1,0 +1,61 @@
+table {
+    border-collapse: collapse;
+    border-bottom: 2px solid #3f4259;
+  }
+  th, td {
+    border: 1px solid #f6f5f4;
+    padding: 1vw;
+  }
+  thead > tr {
+    background-color: #3f4259;
+    color: #f6f7fa;
+  }
+  tbody > tr:nth-child(odd) {
+    background-color: #4f7bff4e;
+  } 
+  
+  body {
+    text-align: center;
+    background-color: #f5f5f5; 
+    font-family: Georgia, serif; 
+  }
+  #hoved {         
+    margin: 20px;         
+    padding: 20px;	             
+    background-color: white; 	 
+    border: 1px solid #cccccc;
+  }
+  h1 {
+    font-family: Arial, sans-serif; 
+  }
+
+  .gym{
+    background-color: aqua;
+  }
+
+  .geo{
+    background-color: #656881;
+  }
+  .matte{
+    background-color: rgb(148, 0, 0);
+  }
+
+  .it{
+    background-color: azure;
+  }
+
+  .ty{
+    background-color: rgb(197, 103, 244);
+  }
+
+  .norsk{
+    background-color: rgb(17, 0, 255);
+  }
+
+.fysikk{
+    background-color: #4ff48b;
+}
+
+.hist{
+    background-color: aquamarine;
+}

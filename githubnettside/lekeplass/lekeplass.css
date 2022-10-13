@@ -1,0 +1,99 @@
+
+html, body {
+    height: 100%;
+  }
+
+body {
+    background-color:#556;
+    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a),
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+    background-size:80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+#mainbody{
+    font-family: 'Times New Roman', Times, serif;
+    width: 60%;
+    text-align: center;
+    margin: 5vw auto;
+   
+    padding: 1vw;
+    
+    background-color: rgb(234, 233, 233);
+    border: 1vw solid #000000ab;
+    border-style: ridge;
+}
+
+h1 {
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    align-content: center;
+   
+    border: 5px solid;
+    border-style: groove;
+    text-shadow: 2px 2px 5px rgb(28, 24, 24);
+    
+}
+
+.sitat {
+    font-style: italic;
+    font-weight: bold;
+}
+img {
+    display: block;
+    margin: auto;
+    width: 50vw;
+    height: auto;
+    border-style: groove;
+    border: 0.5vw solid #000000ab;
+
+}
+
+h4{
+    background-color: #99a;
+    float: left;
+    border: 0.5vw solid;
+    border-style: ridge;
+    margin: auto;
+}
+
+#scam{
+    width: fit-content;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    border: #445 solid;
+    background: 
+
+radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+background-color: slategray;
+background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
+}
+
+.kilde{
+    background:
+linear-gradient(135deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+linear-gradient(225deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+background-color:#708090;
+background-size: 64px 128px;
+
+    margin: auto;
+    border: 0.5vw solid;
+    border-style: ridge;
+    margin: auto;
+    width: 90vw;
+}
+
+
+h1{
+    font-style: oblique;
+    font: bolder;
+}
