@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #269;
+            background-image: linear-gradient(white 2px, transparent 2px),
+                linear-gradient(90deg, white 2px, transparent 2px),
+                linear-gradient(rgba(255, 255, 255, .3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, .3) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+            background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+        }
+
+        div {
+            padding: 5px;
+            background-color: antiquewhite;
+            border-radius: 5%;
+
+
+        }
+
+        section {
+            display: grid;
+            grid-gap: 2px;
+            grid-template-columns: repeat(18, 1fr);
+            justify-content: space-between;
+            border: solid 2.5px;
+            background-color: whitesmoke;
+            position: relative;
+        }
+
+        .span-2 {
+            grid-column: span 16;
+            grid-row: span 1;
+            border-radius: 0%;
+        }
+
+        .span-4 {
+            grid-column: span 10;
+            border-radius: 0%;
+        }
+
+        .usynlig {
+            opacity: 0;
+        }
+
+        .rod {
+            background-color: rgba(147, 7, 7, 0.913);
+        }
+
+        .gl {
+            background-color: rgba(224, 148, 18, 0.893);
+        }
+
+        .Db {
+            background-color: rgba(19, 19, 137, 0.813);
+        }
+
+        .Lb {
+            background-color: rgba(173, 216, 230, 0.86);
+        }
+
+        .r {
+            background-color: pink;
+        }
+
+        .L {
+            background-color: purple;
+        }
+
+        .Gul {
+            background-color: yellow;
+        }
+
+        .Dg {
+            background-color: darkgreen;
+        }
+
+        .Lg {
+            background-color: lightgreen;
+        }
+
+        .cy {
+            background-color: rgb(1, 151, 118);
+        }
+
+        .g {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="Lg"> <sup>1</sup> H <sub>Hydrogen</sub></div>
+        <div class="span-2 usynlig"> the</div>
+        <div class="r"><sup>2</sup> He <sub>Helium</sub></div>
+        <div class="rod"><sup>3</sup>Li <sub>Lithium</sub></div>
+        <div class="gl"><sup>4</sup>Be <sub>Berylium</sub></div>
+        <div class="span-4 usynlig"></div>
+        <div class="Gul"><sup>5</sup>B <br> <sub>Baron</sub></div>
+        <div class="Dg"><sup>6</sup>C <br> <sub>Carbon</sub></div>
+        <div class="Lg"><sup>7</sup>N <br> <sub>Nitrogen</sub></div>
+        <div class="Lg"><sup>8</sup>O <br> <sub>Oxygen</sub></div>
+        <div class="Lg"><sup>9</sup>F <br> <sub>Flurine</sub></div>
+        <div class="r"><sup>10</sup>Ne <br> <sub>Neon</sub></div>
+        <div class="rod"><sup>11</sup>Na <sub>Sodium</sub></div>
+        <div class="gl"><sup>12</sup>Mg <sub>Magnesium</sub></div>
+        <div class="span-4 usynlig"></div>
+        <div class="L"><sup>13</sup>Al <sub>Aleminium</sub></div>
+        <div class="Gul"><sup>14</sup>Si <sub>Silicon</sub></div>
+        <div class="Dg"><sup>15</sup>P <sub>Phosphorus</sub></div>
+        <div class="Dg"><sup>16</sup>S <br><sub>Sulfur</sub></div>
+        <div class="Lg"><sup>17</sup>Cl <sub>Chlorine</sub></div>
+        <div class="r"><sup>18</sup>Ar <sub>Argon</sub></div>
+        <div class="rod"><sup>19</sup>K <sub>Porassium</sub></div>
+        <div class="gl"><sup>20</sup>Ca <sub>Calium</sub></div>
+        <div class="Lb"><sup>21</sup>Sc <sub>Scandium</sub></div>
+        <div class="Lb"><sup>22</sup>Ti <sub>Titanium</sub></div>
+        <div class="Lb"><sup>23</sup>V <sub>Vanadium</sub></div>
+        <div class="Lb"><sup>24</sup>Cr <sub>Chromium</sub></div>
+        <div class="Lb"><sup>25</sup>Mn <sub>Manganese</sub></div>
+        <div class="Lb"><sup>26</sup>Fe <br> <sub>Iron</sub></div>
+        <div class="Lb"><sup>27</sup>Co <sub>Cobalt</sub></div>
+        <div class="Lb"><sup>28</sup>Ni <br><sub>Nickel</sub></div>
+        <div class="Lb"><sup>29</sup>Cu <sub>Copper</sub></div>
+        <div class="Lb"><sup>30</sup>Zn <br><sub>Zinc</sub></div>
+        <div class="L"><sup>31</sup>Ga <sub>Gallium</sub></div>
+        <div class="Gul"><sup>32</sup>Ge <sub>Germanium</sub></div>
+        <div class="Gul"><sup>33</sup>As <sub>Arsenic</sub></div>
+        <div class="Dg"><sup>34</sup>Se <sub>Selenium</sub></div>
+        <div class="Lg"><sup>35</sup>Br <sub>Bromine</sub></div>
+        <div class="r"><sup>36</sup>Kr <sub>Krypton</sub></div>
+        <div class="rod"><sup>37</sup>Rb <sub>Rubidium</sub></div>
+        <div class="gl"><sup>38</sup>Sr <sub>Strontium</sub></div>
+        <div class="Lb"><sup>39</sup>Y <sub>Ytrium</sub></div>
+        <div class="Lb"><sup>40</sup>Cr <sub>Ciconium</sub></div>
+        <div class="Lb"><sup>41</sup>Nb <sub>Niobium</sub></div>
+        <div class="Lb"><sup>42</sup>Mo <sub>Molybdenum</sub></div>
+        <div class="Lb"><sup>43</sup>Tc <sub>Technetium</sub></div>
+        <div class="Lb"><sup>44</sup>Ru <sub>Ruthenium</sub></div>
+        <div class="Lb"><sup>45</sup>Rh <sub>Rhodium</sub></div>
+        <div class="Lb"><sup>46</sup>Pd <sub>Palladium</sub></div>
+        <div class="Lb"><sup>47</sup>Ag <br><sub>Silver</sub></div>
+        <div class="Lb"><sup>48</sup>Cd <sub>Cadmium</sub></div>
+        <div class="L"><sup>49</sup>In <sub>Indium</sub></div>
+        <div class="L"><sup>50</sup>Sn <br><sub>Tin</sub></div>
+        <div class="Gul"><sup>51</sup>Sb <sub>Antimony</sub></div>
+        <div class="Gul"><sup>52</sup>Te <sub>Tellurium</sub></div>
+        <div class="Lg"><sup>53</sup>I <br> <sub>Iodine</sub></div>
+        <div class="r"><sup>54</sup>Xe <sub>Xenon</sub></div>
+        <div class="rod"><sup>55</sup>Cs <sub>Cesium</sub></div>
+        <div class="gl"><sup>56</sup>Ba <sub>Barium</sub></div>
+        <div class="Db">57-71</div>
+        <div class="Lb"><sup>72</sup>Hf <sub>Hafnium</sub></div>
+        <div class="Lb"><sup>73</sup>Ta <sub>Tantalum</sub></div>
+        <div class="Lb"><sup>74</sup>W <sub>Tungsten</sub></div>
+        <div class="Lb"><sup>75</sup>Re <sub>Rhenium</sub></div>
+        <div class="Lb"><sup>76</sup>Os <sub>Osmium</sub></div>
+        <div class="Lb"><sup>77</sup>Ir <sub>Iridium</sub></div>
+        <div class="Lb"><sup>78</sup>Pt <sub>Platinum</sub></div>
+        <div class="Lb"><sup>79</sup>Au <br><sub>Gold</sub></div>
+        <div class="Lb"><sup>80</sup>Hg <sub>Mercury</sub></div>
+        <div class="L"><sup>81</sup>Tl <sub></sub>Thalium</div>
+        <div class="L"><sup>82</sup>Pb <br><sub>Lead</sub></div>
+        <div class="L"><sup>83</sup>Bi <sub>Bismuth</sub></div>
+        <div class="L"><sup>84</sup>Po <sub>Polonium</sub></div>
+        <div class="Gul"><sup>85</sup>At <sub>Astatine</sub></div>
+        <div class="r"><sup>86</sup>Rn <sub>Radon</sub></div>
+        <div class="rod"><sup>87</sup>Fr <sub>Francium</sub></div>
+        <div class="gl"><sup>88</sup>Ra <sub>Radium</sub></div>
+        <div class="cy">89-103</div>
+        <div class="Lb"><sup>104 </sup>Lr <sub>Lawrencium</sub></div>
+        <div class="Lb"><sup>105</sup>Db <sub></sub>Dubnium</div>
+        <div class="Lb"><sup>106</sup>Sg <sub>Seaborgium</sub></div>
+        <div class="Lb"><sup>107</sup>Bh <sub>Bohrium</sub></div>
+        <div class="Lb"><sup>108</sup>Hs <sub>Hassium</sub></div>
+        <div class="g"><sup>109</sup>Mt <sub>Meitnerium</sub></div>
+        <div class="g"><sup>110</sup>Ds <sub>Darmstadtium</sub></div>
+        <div class="g"><sup>111</sup>Rg <sub>Roentgenium</sub></div>
+        <div class="Lb"><sup>112</sup>Cn <sub>Copernicium</sub></div>
+        <div class="g"><sup>113</sup>Nh <sub>Nihonium</sub></div>
+        <div class="g"><sup>114</sup>Fl <sub>Flerovium</sub></div>
+        <div class="g"><sup>115</sup>Mc <sub>Moscovium</sub></div>
+        <div class="g"><sup>116</sup>Lv <sub>Livermorium</sub></div>
+        <div class="g"><sup>117</sup>Ts <sub>Tennessine</sub></div>
+        <div class="r"><sup>118</sup>Og <sub>Oganesson</sub></div>
+        <div style="grid-column: span 18;" class="usynlig"> </div>
+
+        <div style="grid-column: span 2;" class="usynlig"></div>
+        <div class="Db"><sup>57 </sup>La <sub>Lanthanum</sub></div>
+        <div class="Db"><sup>58 </sup>Ce <sub>Cerium</sub></div>
+        <div class="Db"><sup>59 </sup>Pr <sub>Praseodymium</sub></div>
+        <div class="Db"><sup>60 </sup>Nd <sub>Neodymium</sub></div>
+        <div class="Db"><sup>61 </sup>Pm <sub>Promethium</sub></div>
+        <div class="Db"><sup>62 </sup>Sm <sub>Samarium</sub></div>
+        <div class="Db"><sup>63 </sup>Eu <sub>Europium</sub></div>
+        <div class="Db"><sup>64 </sup>Gd <sub>Gadolinium</sub></div>
+        <div class="Db"><sup>65 </sup>Tb <sub>Terbium</sub></div>
+        <div class="Db"><sup>66 </sup>Dy <sub>Dysprosium</sub></div>
+        <div class="Db"><sup>67 </sup>Ho <sub>Holmium</sub></div>
+        <div class="Db"><sup>68 </sup>Er <sub>Erbium</sub></div>
+        <div class="Db"><sup>69 </sup>Tm <sub>Thulium</sub></div>
+        <div class="Db"><sup>70 </sup>Yb <sub>Ytterbium</sub></div>
+        <div class="Db"><sup>71 </sup>Lu <sub>Lutetium</sub></div>
+
+        <div style="grid-column: span 1;" class="usynlig"></div>
+        <div style="grid-column: span 2;" class="usynlig"></div>
+        <div class="cy"><sup>89 </sup>Ac <sub>Actinium</sub> </div>
+        <div class="cy"><sup>90 </sup>Th <sub>Thorium</sub> </div>
+        <div class="cy"><sup>91 </sup>Pa <sub>Protactinium</sub> </div>
+        <div class="cy"><sup>92 </sup>U <sub>Uranium</sub></div>
+        <div class="cy"><sup>93 </sup>Np <sub>Neptunium</sub> </div>
+        <div class="cy"><sup>94 </sup>Pu <sub>Plutonium</sub> </div>
+        <div class="cy"><sup>95 </sup>Am <sub>Americium</sub> </div>
+        <div class="cy"><sup>96 </sup>Cm <sub>Curium</sub> </div>
+        <div class="cy"><sup>97 </sup>Bk <sub>Berkelium</sub> </div>
+        <div class="cy"><sup>98 </sup>Cf <sub>Californium</sub> </div>
+        <div class="cy"><sup>99 </sup>Es <sub>Einsteinium</sub> </div>
+        <div class="cy"><sup>100 </sup>Fm <sub></sub>Fermium</div>
+        <div class="cy"><sup>101 </sup>Md <sub>Mendelevium</sub></div>
+        <div class="cy"><sup>102 </sup>No <sub>Nobelium</sub></div>
+        <div class="cy"><sup>103 </sup>Lr <sub>Lawrencium</sub></div>
+
+    </section>
+
+</body>
+
+</html>
