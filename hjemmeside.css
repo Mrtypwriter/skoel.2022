@@ -75,9 +75,7 @@ h1{width: fit-content;
 a:hover{
     color: #ff0000ab;
     text-decoration-color: #5d6cb9 ;
-    font-size:30px;
-    transition: all 700ms;
-    font-size-adjust: 1px;
+      transform: scale(1.2);
     
   
 }
