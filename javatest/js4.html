@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var tilfeldigTall;
+        tilfeldigTall = (Math.random() * 100) + 1;
+        var tilfeldigHel = parseInt(tilfeldigTall);
+        var tidIgjenn = 100- tilfeldigHel
+
+        if (tilfeldigHel <= 10){
+            document.write("du er ung, såvidt ", tilfeldigHel, "  år gammel")
+        }
+        else if (tilfeldigHel < 20){
+            document.write("du er ei ungkar, hele ", tilfeldigHel, " år" )
+        }
+        else if (tilfeldigHel == 20){
+            document.write("du er ei ungkar, om ", tilfeldigHel - 78, " dager anbefaler jeg at du ikke tar bussen" )
+        }
+        else if ((tilfeldigHel < 67) && (tilfeldigHel != 65)){
+            document.write("du er voksen og ", tilfeldigHel, " år blitt, da har du ", tidIgjenn," år igjenn"  )
+        }
+        else if  (tilfeldigHel == 65){
+            document.write("du er voksen og dum ", tilfeldigHel, " år, men plz stop å kødde med ild. det ender ikke bra"  )
+        }
+        else if (tilfeldigHel ==67){
+            document.write("du er jammen blitt pansjonist i år ", tilfeldigHel, " år, da har du ", tidIgjenn," år du kan nyte"  )
+        }
+        else if (tilfeldigHel <= 67){
+            document.write("du er blitt eldre ", tilfeldigHel, " år, da er det bare ", tidIgjenn, " år igjenn"  )
+        }
+        else if (tilfeldigHel <= 75){
+            document.write("du er blitt eldre enn de fleste ", tilfeldigHel, " år gammal, da nermer det seg. ", tidIgjenn, " år å gå"  )
+        }
+        else if (tilfeldigHel <= 99){
+            document.write("du er blitt ", tilfeldigHel, " år gammal, da nermer det seg. hele ", tidIgjenn, " år å gå"  )
+        }
+        else {
+            document.write("du har klart deg i ", tilfeldigHel, " år. du er gammel, så lykke til, det er mindre en ", tidIgjenn +3, " dager igjenn "   )
+        }                
+    </script>
+
+</body>
+</html>

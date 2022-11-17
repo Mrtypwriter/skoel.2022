@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <style>
+    body {
+      background-color: aliceblue;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div>
+
+  <h1 id="txtResultat"> overteks</h1>
+  <input placeholder="passord" id="passord" type="password" name="fname"><br>
+    
+  <input id="btn" value="Submit" type="button">
+  
+ 
+
+ <h2> sjanser:</h2> <h2 id="sjanse"></h2>
+  <script>
+    //denne koden generer et passord osv, skriv inn riktig passord, feiler du så blir du kasta ut
+   let passord1 = "speider";
+   let abc = "abcdefghijklmnopqrstuvwxyzæøå"
+  
+   var sjanser = 3
+    txtResulat = document.getElementById("txtResultat");
+    passord = document.getElementById("passord");
+    btn= document.getElementById("btn");
+    
+    
+    
+    Math.random(abc)
+
+    btn.onclick = function(){
+
+      
+
+      if ((passord.value) == (passord1)) {
+      txtResulat.innerHTML ="riktig passord"
+      }
+      
+      else if ((passord.value)== "?1"){
+        txtResulat.innerHTML = passord1.substring(1);
+      }
+      else if((passord.value)== "?2"){
+        txtResulat.innerHTML = passord1.substring(2);
+
+      }
+      else if (passord.value=="lengde"){
+        txtResulat.innerHTML = passord1.length
+      }
+
+      else{
+        sjanser = sjanser - 1
+        txtResulat.innerHTML = "feil passord, det har nå blitt lagt till en random boksav"
+        let abcd = abc[Math.floor(Math.random()*abc.length)]
+        passord1+=abcd
+        alert(passord1)
+      };
+
+      sjanse.innerHTML = sjanser
+
+      if(sjanser == 0) {
+        window.location.replace("https://theuselessweb.com")
+      }
+    }
+    
+   
+
+  </script>
+
+  </div>
+</body>
+
+</html>

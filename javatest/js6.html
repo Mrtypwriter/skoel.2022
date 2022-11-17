@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hilser"></h1> <br>
+
+
+    <input type="button" id="but" value="klikk her for en hilsen"> <br> <br>
+    <script>
+
+        document.getElementById("but")
+        var abc ="abc"
+        
+         
+
+
+        but.onclick=function tilfeldighilsen() {
+            let hilse = abc[Math.floor(Math.random()*abc.length)]
+            if (hilse == "a") {
+            hilser.innerHTML = "hallo"
+            }
+            else if  (hilse=="b"){
+                hilser.innerHTML="god morgen"
+            }
+            else {
+                hilser.innerHTML = "god dag"
+            };
+
+        }
+
+    </script>
+    <!--
+    <input placeholder="kvadrer ett tall" id="kvadratet" type="int" ><br>
+    <h1 id="svar"></h1> 
+    <input id="btn" value="**2" type="button" onclick= "kvadrerEttTall()">
+    
+
+    <script>
+        function kvadrerEttTall() {
+            var a = int(document.getElementById("kvadratet"))
+            a = Number(a)
+            svar.innerHTML = a*a
+        }
+
+
+    </script>
+-->
+    <button onclick="kvadrat(3)">Kvadrer 3</button>
+    <script>
+        function kvadrat(a) {
+            console.log(a*a)
+        }
+
+    </script>
+
+</body>
+</html>

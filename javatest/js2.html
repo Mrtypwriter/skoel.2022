@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oppgave 4  aunivers datatyper s fire</title>
+</head>
+<body>
+    <script>
+
+        var antallTimer;
+        var resultat;
+        antallTimer = Number(prompt("timer"));
+        antallMinutter = Number(prompt("minutter"));
+        antallSekunder = Number(prompt("sekunder"));
+        antallTimer1=antallTimer
+        antallMinutter1=antallMinutter
+        
+        antallTimer = antallTimer*3600;
+        antallMinutter = antallMinutter* 60;
+
+        resultat = antallTimer+antallMinutter+antallSekunder;
+        document.write ( antallTimer1, "timer + ", antallMinutter1, "minutter + ", antallSekunder,"sekunder blir ", resultat,"sekunder   ");
+
+        var antalMinutter=0
+        var antallTimer=-0
+        
+
+        
+        
+        while(resultat>=60) { 
+             resultat -=60
+             antalMinutter += 1
+        };
+        
+
+        while(antalMinutter>=60){
+             antalMinutter-=60
+             antallTimer+=1
+        };
+        
+        
+        document.write( " <h1> oppgave 3 </h1>",antallTimer,"timer  ",antalMinutter,"minutter  ", resultat , "sekunder <h1> </h1>")
+    </script>
+
+<button> <a href="./js2.html"> kjør på nytt</a></button>
+</body>
+</html>
