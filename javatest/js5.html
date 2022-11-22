@@ -7,11 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="txtResultat"></h1>
+
+    <h1 id="txtResultat">denne siden printer ut alle tall opp til hundre, untatt tallene i ti gangeren.</h1>
     <script>
-    
-     while ((x <= 100) && (x != Math.random)) {
-        txtResulat.innerHTML= x
+        var x = 0;
+        
+        console.log(x)
+     while (x <= 100) {
+        if (x % 10 > 0) {
+            console.log(x);
+            
+        };
+        x ++;
      };
             
         
