@@ -1,0 +1,57 @@
+body{
+    text-align: center;
+    background:#192734;
+    justify-content: center;
+    
+    
+}
+
+#hoved {
+    position: relative;
+    justify-content: center;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    
+}
+
+#overmeny{
+    background-color: aliceblue;
+    margin-top: -30px;
+    
+    
+
+    
+}
+
+section {
+    display: grid;
+    float: none;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: space-between;
+    background-color: whitesmoke;
+    position: relative;
+}
+
+di {
+    padding: 5px;
+    background-color: antiquewhite;
+    border-radius: 5%;
+}
+
+#yatzeeTabell{
+    text-align: center;
+    background-color: azure;
+    width: fit-content;
+}
+
+th, td {
+    border: solid;
+    border-radius: 4%;
+    width: max-content;
+    justify-content: center;
+}
+
+#tærninger {
+    margin-bottom: 3vw;
+    width: 3vw;
+}

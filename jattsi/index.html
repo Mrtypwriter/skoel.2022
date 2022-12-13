@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="yatzee.css">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #overmeny {
+            background-color: aliceblue;
+
+        }
+    </style>
+    <script src="yatzee.js"></script>
+</head>
+
+<body>
+
+    
+
+
+
+
+
+
+    <div id="hoved">
+        <div id="overmeny">
+            <h1>yatzee</h1>
+        </div>
+
+        <div id="tærninger">
+            <section>
+                <button id="tærning1" onclick="beholdTer1()" ondblclick="ikkBehold1()">
+                    <p id="nummer1">tærning1</p>
+                </button>
+                <button id="tærning2" onclick="beholdTer2()" ondblclick="ikkBehold2()">
+                    <p id="nummer2">tærning2</p>
+                </button>
+                <button id="tærning3" onclick="beholdTer3()" ondblclick="ikkBehold3()">
+                    <p id="nummer3">tærning3</p>
+                </button>
+                <button id="tærning4" onclick="beholdTer4()" ondblclick="ikkBehold4()">
+                    <p id="nummer4">tærning4</p>
+                </button>
+                <button id="tærning5" onclick="beholdTer5()" ondblclick="ikkBehold5()">
+                    <p id="nummer5">tærning5</p>
+                </button>
+
+
+            </section>
+        </div>
+
+        <div>
+            <button id="start" onclick="start(), resett()"> start</button>
+            <button id="runde" onclick="runder()"> fargelegg ubrukte kolonner (funker ikke)</button> 
+            <button id="kast" onclick="kastalle()">kast</button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="yatzeeTabell">
+            <table>
+                <thead>
+                    <td>deltagere</td>
+                    <td>
+                        <p id="person1">person1</p>
+                    </td>
+                    <td>
+                        <p id="person2">person2</p>
+                    </td>
+                    <td>
+                        <p id="person3">person3</p>
+                    </td>
+                    <td>
+                        <p id="person4">person4</p>
+                    </td>
+                    <td>
+                        <p id="person5">person5</p>
+                    </td>
+                    <td>
+                        <p id="person6">person6</p>
+                    </td>
+                    <td>
+                        <p id="person7">person7</p>
+                    </td>
+                    <td>
+                        <p id="person8">person8</p>
+                    </td>
+                </thead>
+                <tr>
+                    <td onclick="simpleTall(1), resett()"> Enere </td>
+                    <td class="1 P1"></td>
+                    <td class="1 P2"></td>
+                    <td class="1 P3"></td>
+                    <td class="1 P4"></td>
+                    <td class="1 P5"></td>
+                    <td class="1 P6"></td>
+                    <td class="1 P7"></td>
+                    <td class="1 P8"></td>
+                </tr>
+                <tr>
+                    <td onclick="simpleTall(2), resett()">toere</td>
+                    <td class="2 P1"></td>
+                    <td class="2 P2"></td>
+                    <td class="2 P3"></td>
+                    <td class="2 P4"></td>
+                    <td class="2 P5"></td>
+                    <td class="2 P6"></td>
+                    <td class="2 P7"></td>
+                    <td class="2 P8"></td>
+                </tr>
+                <tr>
+                    <td onclick="simpleTall(3), resett()">treere</td>
+                    <td class="3 P1"></td>
+                    <td class="3 P2"></td>
+                    <td class="3 P3"></td>
+                    <td class="3 P4"></td>
+                    <td class="3 P5"></td>
+                    <td class="3 P6"></td>
+                    <td class="3 P7"></td>
+                    <td class="3 P8"></td>
+                </tr>
+                <tr>
+                    <td onclick="simpleTall(4), resett()">firere</td>
+                    <td class="4"></td>
+                    <td class="4"></td>
+                    <td class="4"></td>
+                    <td class="4"></td>
+                    <td class="4"></td>
+                    <td class="4"></td>
+                    <td class="4"></td>
+                    <td class="4 P8"></td>
+                </tr>
+                <tr>
+                    <td onclick="simpleTall(5), resett()">femmere</td>
+                    <td class="5 P1"></td>
+                    <td class="5 P2"></td>
+                    <td class="5 P3"></td>
+                    <td class="5 P4"></td>
+                    <td class="5 P5"></td>
+                    <td class="5"></td>
+                    <td class="5"></td>
+                    <td class="5 P8"></td>
+                </tr>
+                <tr>
+                    <td onclick="simpleTall(6), resett()">seksere</td>
+                    <td class="6"></td>
+                    <td class="6"></td>
+                    <td class="6"></td>
+                    <td class="6"></td>
+                    <td class="6"></td>
+                    <td class="6"></td>
+                    <td class="6"></td>
+                    <td class="6 P8"></td>
+                </tr>
+                <tr>
+                    <td class="7" style="background-color: #5d6cb9" >sum</td>
+                    <td class="7" style="background-color: #5d6cb9"></td>
+                    <td class="7" style="background-color: #5d6cb9"></td>
+                    <td class="7" style="background-color: #5d6cb9"></td>
+                    <td class="7" style="background-color: #5d6cb9"></td>
+                    <td class="7" style="background-color: #5d6cb9"></td>
+                    <td class="7" style="background-color: #5d6cb9"></td>
+                    <td class="7" style="background-color: #5d6cb9"></td>
+                    <td class="7" style="background-color: #5d6cb9"></td>
+                </tr>
+                <tr>
+                    <td>bonus</td>
+                    <td class="8"></td>
+                    <td class="8"></td>
+                    <td class="8"></td>
+                    <td class="8"></td>
+                    <td class="8"></td>
+                    <td class="8"></td>
+                    <td class="8"></td>
+                    <td class="8"></td>
+                </tr>
+                <tr>
+                    <td onclick="par1(), resett()">ett parr</td>
+                    <td class="9"></td>
+                    <td class="9"></td>
+                    <td class="9"></td>
+                    <td class="9"></td>
+                    <td class="9"></td>
+                    <td class="9"></td>
+                    <td class="9"></td>
+                    <td class="9"></td>
+                </tr>
+                <tr>
+                    <td>to parr</td>
+                    <td class="10"></td>
+                    <td class="10"></td>
+                    <td class="10"></td>
+                    <td class="10"></td>
+                    <td class="10"></td>
+                    <td class="10"></td>
+                    <td class="10"></td>
+                    <td class="10"></td>
+                </tr>
+                <tr>
+                    <td>tre like</td>
+                    <td class="11"></td>
+                    <td class="11"></td>
+                    <td class="11"></td>
+                    <td class="11"></td>
+                    <td class="11"></td>
+                    <td class="11"></td>
+                    <td class="11"></td>
+                    <td class="11"></td>
+                </tr>
+                <tr>
+                    <td>fire like</td>
+                    <td class="12"></td>
+                    <td class="12"></td>
+                    <td class="12"></td>
+                    <td class="12"></td>
+                    <td class="12"></td>
+                    <td class="12"></td>
+                    <td class="12"></td>
+                    <td class="12"></td>
+                </tr>
+                <tr>
+                    <td>liten straight</td>
+                    <td class="13"></td>
+                    <td class="13"></td>
+                    <td class="13"></td>
+                    <td class="13"></td>
+                    <td class="13"></td>
+                    <td class="13"></td>
+                    <td class="13"></td>
+                    <td class="13"></td>
+                </tr>
+                <tr>
+                    <td>stor straight</td>
+                    <td class="14"></td>
+                    <td class="14"></td>
+                    <td class="14"></td>
+                    <td class="14"></td>
+                    <td class="14"></td>
+                    <td class="14"></td>
+                    <td class="14"></td>
+                    <td class="14"></td>
+                </tr>
+                <tr>
+                    <td>hus</td>
+                    <td class="15"></td>
+                    <td class="15"></td>
+                    <td class="15"></td>
+                    <td class="15"></td>
+                    <td class="15"></td>
+                    <td class="15"></td>
+                    <td class="15"></td>
+                    <td class="15"></td>
+                </tr>
+                <tr>
+                    <td>sjanse</td>
+                    <td class="16"></td>
+                    <td class="16"></td>
+                    <td class="16"></td>
+                    <td class="16"></td>
+                    <td class="16"></td>
+                    <td class="16"></td>
+                    <td class="16"></td>
+                    <td class="16"></td>
+                </tr>
+                <tr>
+                    <td>yatzee</td>
+                    <td class="17"></td>
+                    <td class="17"></td>
+                    <td class="17"></td>
+                    <td class="17"></td>
+                    <td class="17"></td>
+                    <td class="17"></td>
+                    <td class="17"></td>
+                    <td class="17"></td>
+                </tr>
+                <tr>
+                    <td>sum</td>
+                    <td class="18"></td>
+                    <td class="18"></td>
+                    <td class="18"></td>
+                    <td class="18"></td>
+                    <td class="18"></td>
+                    <td class="18"></td>
+                    <td class="18"></td>
+                    <td class="18"></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
