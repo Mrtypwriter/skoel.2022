@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ukeDager = ["mandag", "tirsdag", "onsdag", "torsdag", "fredag", "lørdag", "søndag"]
+
+        function fakkSøndag(){
+            ukeDager.unshift("blåmandag")
+            ukeDager.shift()
+            
+            ukeDager.pop()
+            return ukeDager
+            
+        }
+        fakkSøndag()
+        let tall = -1
+        while ( tall <= 4 ) {
+            tall ++
+            alert(ukeDager[tall])
+        
+        }
+
+        ukeDager.push("sønda2")
+        ukeDager.indexOf(2)
+        
+        alert(ukeDager)
+    </script>
+    
+</body>
+</html>

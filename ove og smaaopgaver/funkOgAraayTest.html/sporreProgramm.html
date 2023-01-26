@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+
+<body>
+    <h1 onclick="musikk()" id="sporsmaal"> Her er spårmålene</h1>
+    
+    <input type="text" id="spillerSvar">
+    <button id="btnForrige">Forrige</button>
+    <button id="btnNeste">Neste</button> 
+    <button id="btnSvar"> svar </button>
+    <br>
+    <br>
+    <button id="svAlt1" onclick="sjekkSvar()" > </button>
+    <button id="svAlt2" onclick="sjekkSvar2()"> </button>
+    <button id="svAlt3" onclick="sjekkSvar3()"> </button>
+    <audio id="bakrunnsMusikk" src="../../bilder/ikkeEttBilde.mp3"></audio>
+    <br>
+    <img width="500wd" id="imgBilde" src="../../bilder/galdpigg.jpg" alt="fant ikke bilde">
+</body>
+<script>
+    var sporsmaal = document.getElementById("sporsmaal")
+    var bakrunnsMusikk = document.getElementById("bakrunnsMusikk")
+    var btnSvar = document.getElementById("btnSvar")
+    var btnForrige = document.getElementById("btnForrige")
+    var btnNeste = document.getElementById("btnNeste")
+    var imgBilde = document.getElementById("imgBilde")
+    var spmNr = 0;
+    var svAlt1 = document.getElementById("svAlt1")
+    var svAlt2 = document.getElementById("svAlt2")
+    var svAlt3 = document.getElementById("svAlt3")
+    spillerSvar.value = "du må bruke denne på noen spørsmål"
+
+    function musikk(){
+        if(bakrunnsMusikk.play()== false){
+        bakrunnsMusikk.play = true
+        }
+    }
+
+
+    var spmOgSvar = [
+        // dette er her alle spøsrmålene ligger lagret. q: står for spørsmål, a1 =svar 1 osv. riktig: er hva som er riktig, og bildet er bildet som skal vises på dette spørmsålet
+        { q: "Hva heter Norges høyeste fjell",a1:"Glittertinn", a2: "Galdhøpiggen", a3:"Muen", riktig:"Galdhøpiggen", bilde:"../../bilder/galdpigg.jpg" },
+        { q: "hvordan utaler man Markento", a1:"mark en to", a2:"marként o", a3:"ma rk12", riktig:"mark en to", bilde: " ../../bilder/ordLOL.jpg" },
+        { q: "Hva er etternavnet til statsministeren i Norge", a1:"Større", a2: "Støre", a3:"Store", riktig:"Støre",bilde:"../../bilder/Jonas.jpg" },
+        { q: "hvordan utaler man Matre", a1:"Mattre", a2:"Ma tre", a3:"Maatre", riktig:"Ma tre", bilde:"../../bilder/ordLOL.jpg " },
+        { q: "hva er fornanvet mitt", a1:" Sophus", a2:"Markento", a3:"Elias", riktig:"Sofus og Elias", bilde:" "},
+        { q: "hva er dette", a1:"Fint", a2:"en vei", a3:"Askim", riktig:"ett bilde", bilde:"../../bilder/pent.JPG"}
+    ]
+
+    
+
+    sporsmaal.innerHTML = spmOgSvar[0].q;
+
+    function sjekkSvar() {
+        // funksjonen sjekksvar() sjekker om du har svart riktig. det er tre av denne funksjonen fordi det er tre knapper
+
+        if (svAlt1.innerHTML.toLowerCase() == spmOgSvar[spmNr].riktig.toLowerCase()) {
+            alert("Supert")
+        }
+        else {
+            alert("Du tokk feil")
+            svAlt1.disabled = true
+        }
+    }
+    function sjekkSvar2() {
+        // funksjonen sjekksvar() sjekker om du har svart riktig. 
+
+        if (svAlt2.innerHTML.toLowerCase() == spmOgSvar[spmNr].riktig.toLowerCase()) {
+            alert("Supert")
+        }
+        else {
+            alert("eh nei")
+            svAlt2.disabled = true
+        }
+    }
+    function sjekkSvar3() {
+        // funksjonen sjekksvar() sjekker om du har svart riktig. 
+
+        if (svAlt3.innerHTML.toLowerCase() == spmOgSvar[spmNr].riktig.toLowerCase()) {
+            alert("Supert")
+        }
+        else {
+            alert(" tokk du virkelig feil?")
+            svAlt3.disabled = true
+        }
+    }
+    function sjekkÅpentSvar(){
+        if(spillerSvar.value.toLowerCase()==spmOgSvar[spmNr].riktig.toLowerCase()){
+            alert("riktig")
+        }
+        else{ alert("hahahah")  
+        }
+    }
+
+    btnSvar.addEventListener("click", sjekkÅpentSvar)
+    
+    function nesteSPM() {
+        if (spmNr < spmOgSvar.length -1) {
+            spmNr++;
+            btnForrige.disabled = false;
+            sporsmaal.innerHTML = spmOgSvar[spmNr].q;
+            imgBilde.src = spmOgSvar[spmNr].bilde;
+            oppsett()
+            spillerSvar.value=" "
+        }
+        if(spmNr == spmOgSvar.length - 1){
+            btnNeste.disabled = true
+        }
+        
+    }
+    btnNeste.addEventListener("click", nesteSPM)
+
+    function forrigeSPM() {
+        btnNeste.disabled = false;
+        if (spmNr > 0) {
+            spmNr--
+            sporsmaal.innerHTML = spmOgSvar[spmNr].q;
+            imgBilde.src = spmOgSvar[spmNr].bilde;
+            oppsett()
+            spillerSvar.value=" "
+        }
+        if (spmNr == 0) {
+            
+            btnForrige.disabled = true;
+        }
+    }
+    btnForrige.addEventListener("click", forrigeSPM)
+
+
+    oppsett()
+    function oppsett(){
+        svAlt1.innerHTML = spmOgSvar[spmNr].a1
+        svAlt1.disabled = false
+        svAlt2.innerHTML = spmOgSvar[spmNr].a2
+        svAlt2.disabled = false
+        svAlt3.innerHTML = spmOgSvar[spmNr].a3
+        svAlt3.disabled = false
+    }
+
+
+</script>
+
+</html>

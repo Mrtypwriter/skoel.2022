@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="button" value="knapp" onclick="skrivtall(tall1), skrivtall(tall2)">
+    <p>----------------------------------------------------------------------------</p>
+    <input type="button" value="er tallet i boksene like, klikk her" onclick="printut()">
+
+    <input type="number" id="tall1" >
+    <input type="number" id="tall2">
+
+    <script>
+
+        var tall1 = 10; // global variabel    // det brukes ofte bokstavene GBL forran variabelnavnet for å vise at den er global feks gblTall1
+        var tall2 = -20
+        // funk skrivtall()
+        // funksjonen skriver ut innholdet i den globale variabelen tall1
+        // fuksjonen tar en parametere  
+
+        function skrivtall(a1){
+            alert(a1)     // denne lokale variabelen er ikke den samme som den globale variabelen
+            var tall1 = 7 // en lokal varabel kan bare brukes inni funksjonen der den er deklarert, en global variabel kan brukes i alle funk i programmet
+                          // det er forskjelden på lokale (inni funksjoner) og globale variabler
+            
+            if (a1 > 0){
+                return true;
+            } else {
+                return false;
+        }
+        }
+        //skrivtall(tall1)
+        //alert(tall1) // som vist her endrer ikke den globale variabelen tall1 seg når vi deklarerer den igjenn inne i  funksjonen
+
+        function printut(){
+            var varA = document.getElementById("tall1").value
+            var varB = document.getElementById("tall2").value
+            var erDeLike = erLik(varA, varB)
+            alert(erDeLike)
+        }
+        
+        function erLik(varA, varB){
+            
+            if (varA == varB){
+                sum = Number(varA*2)
+                return sum;
+            } else {
+                return false;
+            }
+          
+        }
+
+
+        
+
+        
+    </script>
+    
+</body>
+</html>

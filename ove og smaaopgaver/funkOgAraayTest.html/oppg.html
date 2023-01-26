@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tall20 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        let stoor = tall20[0]
+        /*
+        for (let i = 0; i < tall20.length; i++) {
+            // oppg 5 a)
+            // denne unksjonen skjekker hvilket nummer i arrayen tall20 som er størst ved bruk av en for løkke
+            if (tall20[i] > stoor){
+              stoor = tall20[i];  
+            }
+        }
+        alert(stoor)
+
+        let liten = tall20[0]
+        for (let i = 0; i < tall20.length; i++) {
+            // oppg 5 b)
+            // denne unksjonen skjekker hvilket nummer i arrayen tall20 som er minst ved bruk av en for løkke
+            if (tall20[i] < liten){
+              liten = tall20[i];  
+            }
+        }
+        alert(liten)
+
+        let variasjonsbredde = stoor - liten 
+        alert(variasjonsbredde)
+
+
+
+        let sum = 0
+        for (let i = 0; i < tall20.length; i++) {
+             sum = tall20[i]+ sum ;
+        }
+        gjennomsnitt = sum/tall20.length
+        alert(gjennomsnitt)
+        */
+
+   // oppgave 6 forskjelden fra 5 er at nå er allt en funksjon
+        function repetasjonSatan(parameter){
+            for (let i = 0; i < parameter.length; i++) {
+            
+            // denne unksjonen skjekker hvilket nummer i arrayen tall20 som er størst ved bruk av en for løkke
+            if (parameter[i] > stoor){
+              stoor = parameter[i];  
+            }
+        }
+        alert(stoor)
+
+        let liten = parameter[0]
+        for (let i = 0; i < parameter.length; i++) {
+            
+            // denne unksjonen skjekker hvilket nummer i arrayen tall20 som er minst ved bruk av en for løkke
+            if (parameter[i] < liten){
+              liten = parameter[i];  
+            }
+        }
+        alert(liten)
+
+        let variasjonsbredde = stoor - liten 
+        alert(variasjonsbredde)
+
+
+
+        let sum = 0
+        for (let i = 0; i < parameter.length; i++) {
+             sum = parameter[i]+ sum ;
+        }
+        gjennomsnitt = sum/parameter.length
+        alert(gjennomsnitt)
+
+        }
+        repetasjonSatan(tall20)
+
+
+
+        //oppgave 7
+
+    </script>
+    
+</body>
+</html>
