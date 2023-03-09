@@ -5,11 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style></style>
+    <link rel="stylesheet" href="../../hjemmeside.css">
+    <style>
+        #sporsmaal:hover{
+            transition: all 500;
+             color: rebeccapurple;
+             transform: scale3d(2);
+        }   
+    </style>
+    
 </head>
 
 <body>
     <h1 onclick="musikk()" id="sporsmaal"> Her er spårmålene</h1>
+
+    <input id="inpNyttSpmSvar" type="text" hidden="true">
+    <button id="btnAdmin">Bli admin</button>
     
     <input type="text" id="spillerSvar">
     <button id="btnForrige">Forrige</button>
@@ -22,20 +33,32 @@
     <button id="svAlt3" onclick="sjekkSvar3()"> </button>
     <audio id="bakrunnsMusikk" src="../../bilder/ikkeEttBilde.mp3"></audio>
     <br>
+    <input id="inpAlt1" type="text" placeholder="svarAlt1">
+    <input id="inpAlt2" type="text" placeholder="svarAlt2">
+    <input id="inpAlt3" type="text" placeholder="svarAlt3">
+    <br>
     <img width="500wd" id="imgBilde" src="../../bilder/galdpigg.jpg" alt="fant ikke bilde">
 </body>
 <script>
-    var sporsmaal = document.getElementById("sporsmaal")
-    var bakrunnsMusikk = document.getElementById("bakrunnsMusikk")
-    var btnSvar = document.getElementById("btnSvar")
-    var btnForrige = document.getElementById("btnForrige")
-    var btnNeste = document.getElementById("btnNeste")
-    var imgBilde = document.getElementById("imgBilde")
+    var sporsmaal = document.getElementById("sporsmaal");
+    var bakrunnsMusikk = document.getElementById("bakrunnsMusikk");
+    var btnSvar = document.getElementById("btnSvar");
+    var btnForrige = document.getElementById("btnForrige");
+    var btnNeste = document.getElementById("btnNeste");
+    var imgBilde = document.getElementById("imgBilde");
     var spmNr = 0;
-    var svAlt1 = document.getElementById("svAlt1")
-    var svAlt2 = document.getElementById("svAlt2")
-    var svAlt3 = document.getElementById("svAlt3")
-    spillerSvar.value = "du må bruke denne på noen spørsmål"
+    var svAlt1 = document.getElementById("svAlt1");
+    var svAlt2 = document.getElementById("svAlt2");
+    var svAlt3 = document.getElementById("svAlt3");
+    spillerSvar.value = "du må bruke denne på noen spørsmål";
+
+    //------------------------ andmin variabler
+    var btnAdmin = document.getElementById("btnAdmin");
+    var inpAlt1 = document.getElementById("inpAlt1");
+    var inpAlt2 = document.getElementById("inpAlt2")
+    var inpAlt3 = document.getElementById("inpAlt3")
+    var inpNyttSpmSvar = document.getElementById("inpNyttSpmSvar")
+
 
     function musikk(){
         if(bakrunnsMusikk.play()== false){
@@ -102,6 +125,7 @@
     btnSvar.addEventListener("click", sjekkÅpentSvar)
     
     function nesteSPM() {
+        // sørger for at knappen btnNeste funker
         if (spmNr < spmOgSvar.length -1) {
             spmNr++;
             btnForrige.disabled = false;
@@ -118,6 +142,7 @@
     btnNeste.addEventListener("click", nesteSPM)
 
     function forrigeSPM() {
+        // gjør det motsatte av nespeSPN()
         btnNeste.disabled = false;
         if (spmNr > 0) {
             spmNr--
@@ -143,6 +168,60 @@
         svAlt3.innerHTML = spmOgSvar[spmNr].a3
         svAlt3.disabled = false
     }
+
+//-----------------------------------------
+    //admin funksjoner:
+    function adminFunksjoner() {
+        // gjør mye, men hovedsakelig endrer den siden slik at du kan legge til ekstra spørmål
+        btnAdmin.innerHTML = "Tilbake til vanlig svarmodus";
+        btnAdmin.removeEventListener("click", adminFunksjoner);
+        btnAdmin.addEventListener("click", normalFunksjoner);
+        inpNyttSpmSvar.hidden=false;
+        sporsmaal.innerHTML = "Skriv nytt spørsmål i første inputfelt, riktig svar i andre";
+        spillerSvar.placeholder = "Spørsmål";
+        inpNyttSpmSvar.placeholder = "Svar";
+        svAlt1.hidden = true;
+        svAlt2.hidden = true;
+        svAlt3.hidden = true;
+        imgBilde.src="";
+        imgBilde.alt="";
+        btnForrige.hidden=true;
+        btnNeste.hidden=true;
+        btnSvar.removeEventListener("click", sjekkÅpentSvar);
+        btnSvar.addEventListener("click", leggInnNyttSpm);
+        btnSvar.innerHTML = "Legg inn spørsmålet";
+        spillerSvar.value = ""
+        inpAlt1.hidden = false
+        inpAlt2.hidden = false
+        inpAlt3.hidden = false
+    }
+
+    function normalFunksjoner() {
+        // gjør det motsatte av adminFunksjoner()
+        alert("her må jeg skrive alt som skal til for å sette tilbake til vanlig modus")
+        alert("forresten, Nå er det " + spmOgSvar.length + " spørmål i arrayen")           
+
+    }
+
+    function leggInnNyttSpm() {
+        //gjør alt som trengs for å legge til et nytt spm
+        var nyttSpm = {q: spillerSvar.value, riktig: inpNyttSpmSvar.value, a1: inpAlt1.value, a2: inpAlt2.value, a3: inpAlt3.value, bilde: "" };
+        spmOgSvar.push(nyttSpm);
+        hjemmObjekt()
+        btnAdmin.addEventListener("click", adminFunksjoner);
+        btnAdmin.removeEventListener("click", normalFunksjoner);
+    }
+    btnAdmin.addEventListener("click", adminFunksjoner);
+
+    function hjemmObjekt(){
+        //hjemmer uønskede objekter som brukes i admin
+        inpAlt1.hidden = true
+        inpAlt2.hidden = true
+        inpAlt3.hidden = true
+
+    }
+
+    hjemmObjekt()
 
 
 </script>
