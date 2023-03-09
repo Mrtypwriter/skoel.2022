@@ -38,6 +38,7 @@
         var merVerdi = 1
 
         window.onclick = function (event) {
+            // når du klikker på skjermen hvil den sjekke om du har 100 poeng eller mere, har du det får du plassere en ny sirkel, samt den fjerner 100 poeng
             if (ponegNummer >= 100){
             
             //ny = true
@@ -60,12 +61,14 @@
         }
 
         function doblePoeng(){
+            //lar hvert poeng du får telle mere, ikke egt dobbling av poengsum
             if (ponegNummer>= 100)
             ponegNummer - 1000
             merVerdi++
         }
 
         ny = true
+        // lydfunksjonen gjør ingenting med lyd, men jeg skrev den om til å telle poeng
         var fjern = function (evt) {
             evt.stopPropagation();
             if (!ny) {
