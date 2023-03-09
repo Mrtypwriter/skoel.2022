@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            background-color: blue;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <audio id="lyd1" src=""></audio>
+    <input type="color" id="farge">
+    <h1> klikk på skjermen for å lage en sirkel, derreter dra musen over sirkelen for poeng. sirkler koster 100 poeng</h1>
+    <h1 id="poeng2" onclick="doblePoeng()"> poeng*2, koster 1000 (kikk her)</h1>
+    <br>
+    <br>
+    <h1 id="poeng">få så mange poeng som mulig</h1>
+
+
+    <script>
+        var lyd1 = document.getElementById("lyd1")
+        var poeng = document.getElementById("poeng")
+        var ponegNummer = 100
+        var poeng2 = document.getElementById("poeng2")
+        var farge = document.getElementById("farge")
+        var merVerdi = 1
+
+        window.onclick = function (event) {
+            if (ponegNummer >= 100){
+            
+            //ny = true
+            var mittElement = document.createElement("div");
+            mittElement.style.top = event.clientY - 25 + "px";
+            mittElement.style.left = event.clientX - 25 + "px";
+            mittElement.style.backgroundColor = farge.value
+            mittElement.onmouseenter = fjern;
+            document.body.appendChild(mittElement);
+            ponegNummer= ponegNummer -100
+            poeng.innerHTML= "poeng:"+ponegNummer
+
+            }
+        };
+
+
+
+        farge.onclick = function (evt) {
+            evt.stopPropagation()
+        }
+
+        function doblePoeng(){
+            if (ponegNummer>= 100)
+            ponegNummer - 1000
+            merVerdi++
+        }
+
+        ny = true
+        var fjern = function (evt) {
+            evt.stopPropagation();
+            if (!ny) {
+                ponegNummer= ponegNummer +1 * merVerdi
+                poeng.innerHTML= "poeng:"+ponegNummer
+                
+                //var minAnim = //evt.target.animate([{ transform: "scale(1)" }, { transform: "scale(2)" }], 500);
+                //lyd1.play()
+
+                //minAnim.onfinish = function (minAnim) {
+                    //lyd1.pause()
+                    //document.body.removeChild(evt.target)
+                //}
+            }
+            else{
+                ponegNummer= ponegNummer-1
+            }
+
+            ny = false
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
