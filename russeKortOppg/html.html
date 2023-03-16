@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="css.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="hoved">
+    <div id="div1">
+      <h1> kort designer </h1>
+
+      <label for="navn">Navn</label>
+      <input type="text" id="navn" placeholder="navn">
+      <input type="text" placeholder="kallenavn" id="kallenavn">
+      <input type="text" id="etternavn" placeholder="etternavn">
+      <br>
+      <label for="tlf">Nummer</label>
+      <input type="number" id="tlf" placeholder="tlf">
+
+
+      <label for="file">bilde</label>
+      <input type="file" id="file" src="">
+
+      <label for="jobb">Jobb</label>
+      <input type="text" name="" id="jobb">
+
+      <label for="ideologi">Ideologi</label>
+      <select id="ideologi">
+        <option value="ingen">Ingen</option>
+        <option value="kommunist">kommunist</option>
+        <option value="nazist">nazist</option>
+        <option value="kapitalist">kapitalist</option>
+        <option value="sosialDemokrat">sosial-Demokratist</option>
+        <option value="anarkist">Anarkisme</option>
+        <option value="kristendommen">kristendommen</option>
+      </select>
+
+      <label for="sitat">sitat</label>
+      <textarea id="sitat" placeholder="skriv ett eget sitat:"></textarea>
+
+      <label for="aarstall">fødsels år</label>
+      <input type="bursdag" id="aarstall" placeholder="2005">
+
+      <label for="kjonn">biologi</label>
+      <select id="kjonn">
+        <option value="stridsvogn">Neitakk</option>
+        <option value="mann">Mann</option>
+        <option value="kvinne">Kvinne</option>
+        <option value="stridsvogn">Panzerkampfvagen IV Ausf J 1944</option>
+        <option value="annet">Annet</option>
+      </select>
+
+
+      <label for="forerkortg">Førerkort</label>
+      <input type="checkbox" name="" id="forerkaart">
+
+      <br>
+
+      <div id="divBorder">
+        <label for="Border">velg ramme</label>
+        <input type="radio" name="ramme" id="stiplet" onclick="truFalse1()">
+        <input type="radio" id="solid" name="ramme" onclick="truFalse2()">
+      </div>
+
+      <button onclick="ideolog(), Print()">Print</button>
+
+    </div>
+    <br>
+    <br>
+
+
+   
+
+    </div>
+    <div id="kort">
+
+      <div id="Dnavn" class="klasse"><p id="Dnavnheader">navn</p></div>
+      <br>
+      <br>
+      <br>
+      <div id="DEtterNavn" class="klasse">
+        <p id="DEetterNavnheader">etternavn</p>
+      </div>
+      <br>
+      <br>
+      <div id="Dimg" class="klasse">
+        <img id="Dimgheader" src="" alt="bilde">
+      </div>
+      <br>
+      <br>
+      <div id="DJob" class="klasse">
+        <p id="DJobheader">yrke</p>
+      </div>
+      <br><br>
+      <div id="Dtlf" class="klasse">
+        <p id="Dtlfheader">tlfnummer</p>
+      </div>
+      <br>
+      <br>
+      <div id="DIdeologi" class="klasse">
+        <p id="DIdeologiheader" style="font-style: italic;">ideolog</p>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div id="DSitat" class="klasse">
+        <p id="DSitatheader">sitat</p>
+      </div>
+      <br>;
+      <br>;
+      <div id="DFodselsaar" class="klasse">
+        <p id="DFodselsaarheader">2005</p>
+      </div>
+      <div id="Dforerkaart" class="klasse">
+        <p id="Dforerkaartheader">førerkort</p>
+        </div>;
+      <div id = "Dbiologi" class="klasse">
+        <p id="Dbiologiheader">biologi</p>
+      </div>;
+  </div>
+
+
+
+  <script>
+    // variabler for navn
+    var navn = document.getElementById("navn");
+    var kallenavn = document.getElementById("kallenavn");
+    var etternavn = document.getElementById("etternavn");
+    //---------------------------------------------------
+    //variabel for tlfnummer
+    var tlf = document.getElementById("tlf");
+    //---------------------------------------------------
+    // variabel for jobb
+    var jobb = document.getElementById("jobb");
+    //---------------------------------------------------
+    //variabler for ideologi  også kalt bakgrunnsfarge
+    var ideologi = document.getElementById("ideologi");
+    //---------------------------------------------------
+    // variabler for stiat
+    var sitat = document.getElementById("sitat");
+    //---------------------------------------------------
+    // variablel for fødselsår
+    var fødselsdato = document.getElementById("aarstall");
+    //---------------------------------------------------
+    // variabel for førerkort
+    var forerkort = document.getElementById("forerkort");
+    //---------------------------------------------------
+    // variabler for endring av ramme
+    var stiplet = false;
+    var solid = false;
+    //---------------------------------------------------
+    var biologi = document.getElementById("kjonn");
+    //---------------------------------------------------
+
+    //---------------------------------------------------
+    //funksjoner for å bevege ting fritt inni visittkortet
+   
+
+  /*
+ Disse neste linjene er for å utføre funksjonen draModus på hvert element som er på visittkortet.
+ funksjonenne er "lånt" fra sindre, men implementert i min kode. noe som er et mirakel
+*/
+draModus(document.getElementById("DEtterNavn"));
+draModus(document.getElementById("Dtlf"));
+draModus(document.getElementById("DIdeologi"));
+draModus(document.getElementById("Dforerkaart"));
+draModus(document.getElementById("DFodselsaar"));
+draModus(document.getElementById("Dnavn"));
+draModus(document.getElementById("DJob"));
+draModus(document.getElementById("Dimg"));
+draModus(document.getElementById("DSitat"));
+draModus(document.getElementById("Dbiologi"));
+
+function draModus(elementet) {
+  console.log(elementet);
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elementet.id + "header")) {
+        document.getElementById(elementet.id + "header").onmousedown = startDraModus;
+    } else {
+        elementet.onmousedown = startDraModus;
+    }
+
+    
+    function startDraModus(event) {
+        event.preventDefault();
+        pos3 = event.clientX;
+        pos4 = event.clientY;
+        document.onmouseup = draModusAv;
+        document.onmousemove = draElementet;
+    }
+
+    
+
+    function draElementet(event) {
+        event.preventDefault();
+        pos1 = pos3 - event.clientX;
+        pos2 = pos4 - event.clientY;
+        pos3 = event.clientX;
+        pos4 = event.clientY;
+        elementet.style.top = (elementet.offsetTop - pos2) + "px";
+        elementet.style.left = (elementet.offsetLeft - pos1) + "px";
+    }
+
+    
+    function draModusAv() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+}
+    //---------------------------------------------------
+    // funksjon for å registrere om førerkort checkboxen er på eller av
+    function forerkaart(){
+      let verdi = document.getElementById("forerkaart").checked
+      if(verdi == true){
+        Dforerkaartheader.innerHTML = "Har gyldig førerkort (så langt;) )"
+      }
+
+      else{
+          Dforerkaartheader.innerHTML = 'Har ikke "gyldig" førerkort';
+      };
+  };
+  //---------------------------------------------------
+
+    // funksjoner for å endre bakrunnsfargen /ideologi
+    // en veldig simpel if funksjon, går gjennom alle valgmulighetene og gir en bakrunnsfarge og setning hver
+    function ideolog(){
+      if ( ideologi.value == "kommunist" ) {
+        kort.style.backgroundColor = "#CC0000";
+        DIdeologiheader.innerHTML ="dette er vårt visittkort";
+      }
+      else if (ideologi.value == "nazist" ){
+        kort.style.backgroundColor ="#53504e";
+        DIdeologiheader.innerHTML = "fargen er ironisk";
+      }
+      else if ( ideologi.value == "kapitalist"){
+        kort.style.backgroundColor = "#002147";
+        DIdeologiheader.innerHTML = "vipps meg 5kr, kortet er ikke gratis";
+      }
+      else if(ideologi.value == "sosialDemokrat"){
+        kort.style.backgroundColor = "#BA0C2F";
+        DIdeologiheader.innerHTML = "alt for norge";
+      }
+      else if(ideologi.value == "anarkist"){
+        kort.style.backgroundColor = "#080908";
+        DIdeologiheader.innerHTML = "ikke for fred";
+        // må endre font fargen inni kortet
+      }
+      else if(ideologi.value == "kristendommen"){
+        kort.style.backgroundColor = "#FFFFFF";
+        DIdeologiheader.innerHTML = "kirkeklokker";
+      }
+      else{ alert("du må velge ideologi")};
+       // skulle egentlig ha en fargevelger her for hvis en ikke velger ideologir, menn det rakk jeg ikke
+    };
+    //---------------------------------------------------
+    // funksjoner for å endre rammen til kortett
+    // hver av radioknappene kjører en av funksjonene
+    function truFalse1() {
+      stiplet = true;
+      solid = false;
+      ramme();
+    };
+    function truFalse2() {
+      stiplet = false;
+      solid = true;
+      ramme();
+    };
+    function truFalse3() {
+      stiplet = false;
+      solid = false;
+      ramme();
+    };
+
+    function ramme() {
+      if (stiplet == true) {
+        divBorder.style.border = "dashed";
+      }
+      else if (solid == true) {
+        divBorder.style.border = "solid";
+      };
+    };
+    //------------------------------------
+    //funksjoner for print knappen. den omgjør div elementene på kortet til det som er skrevet av brukeren i de forsjellige inputtene
+
+  var klass = document.getElementsByClassName("klasse");
+  var n = -1;
+    function Print(){
+      kort.style.border=divBorder.style.border;
+      Dnavnheader.innerHTML= navn.value;
+      DEetterNavnheader.innerHTML= etternavn.value;
+      DFodselsaarheader.innerHTML = bursdag.value;
+
+      
+      DJobheader.innerHTML = jobb.value;
+      Dtlf.innerHTML = tlf.value;
+      DSitatheader.innerHTML = sitat.value;
+
+      Dbiologiheader.innerHTML = biologi.value;
+      hoved.hidden = true;
+      var bildeE1 = document.getElementById("file").files[0].name;
+      //DImgheater.src 
+       document.getElementById("Dimgheader").src = bildeE1;
+      
+      forerkaart()
+      while (n <= klass.length){
+        n++;
+        klass[n].style.border = "none";
+        
+      };
+    };
+    //------------------------------------
+    
+    
+
+  </script>
+</body>
+
+</html>
