@@ -303,6 +303,11 @@ function draModus(elementet) {
       Dbiologiheader.innerHTML = biologi.value;
       hoved.hidden = true;
       
+      //var bildeE1 = document.getElementById("file").files[0].name;
+      var filen = document.getElementById("file")
+      var bildeE1= URL.createObjectURL(filen.files[0]);
+      //DImgheater.src 
+       document.getElementById("Dimgheader").src = bildeE1;
       
       forerkaart()
       while (n <= klass.length){
@@ -310,8 +315,8 @@ function draModus(elementet) {
         klass[n].style.border = "none";
         
       };
-      //var bildeE1 = document.getElementById("file").files[0].name;
-      var bildeE1= URL.createObjectURL("(file").files[0];
+      var bildeE1 = document.getElementById("file").files[0].name;
+      //var bildeE1= URL.createObjectURL(file.files[0]);
       //DImgheater.src 
        document.getElementById("Dimgheader").src = bildeE1;
     };
