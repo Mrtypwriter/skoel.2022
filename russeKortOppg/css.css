@@ -36,8 +36,8 @@ body {
 }
 
 #kort{
-  width: 30vw;
-  height: 20vw;
+  width: 40vw;
+  height: 25vw;
   border: solid;
   
 }
@@ -55,5 +55,5 @@ body {
 }
 
 #Dimgheader{
-  width: 7vw;
+  width: 10vw;
 }
