@@ -225,7 +225,7 @@ function draModus(elementet) {
       };
   };
   //---------------------------------------------------
-
+  var i = -1
     // funksjoner for å endre bakrunnsfargen /ideologi
     // en veldig simpel if funksjon, går gjennom alle valgmulighetene og gir en bakrunnsfarge og setning hver
     function ideolog(){
@@ -236,10 +236,18 @@ function draModus(elementet) {
       else if (ideologi.value == "nazist" ){
         kort.style.backgroundColor ="#53504e";
         DIdeologiheader.innerHTML = "fargen er ironisk";
+        while (i < klass.length-1){
+          i++;
+          klass[i].style.color = "white";
+        };
       }
       else if ( ideologi.value == "kapitalist"){
         kort.style.backgroundColor = "#002147";
         DIdeologiheader.innerHTML = "vipps meg 5kr, kortet er ikke gratis";
+        while (i < klass.length-1){
+          i++;
+          klass[i].style.color = "white";
+        };
       }
       else if(ideologi.value == "sosialDemokrat"){
         kort.style.backgroundColor = "#BA0C2F";
@@ -248,7 +256,10 @@ function draModus(elementet) {
       else if(ideologi.value == "anarkist"){
         kort.style.backgroundColor = "#080908";
         DIdeologiheader.innerHTML = "ikke for fred";
-        // må endre font fargen inni kortet
+        while (i < klass.length-1){
+          i++;
+          klass[i].style.color = "white";
+        };
       }
       else if(ideologi.value == "kristendommen"){
         kort.style.backgroundColor = "#FFFFFF";
@@ -310,15 +321,11 @@ function draModus(elementet) {
        document.getElementById("Dimgheader").src = bildeE1;
       
       forerkaart()
-      while (n <= klass.length){
+      while (n < klass.length-1){
         n++;
         klass[n].style.border = "none";
-        
       };
-      var bildeE1 = document.getElementById("file").files[0].name;
-      //var bildeE1= URL.createObjectURL(file.files[0]);
-      //DImgheater.src 
-       document.getElementById("Dimgheader").src = bildeE1;
+    
     };
     //------------------------------------
     
