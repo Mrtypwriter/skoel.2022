@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kryptering av ord</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>kryptering av ord</h1>
+    <form>
+        <label for="input">legg inn ord for å kryptere:</label><br>
+        <input type="text" id="input" name="input"><br>
+        <button type="button" onclick="kryptering()">krypter</button>
+    </form>
+    <br>
+    <p id="kryptUt"></p>
+
+    <script>
+        konsonanter=["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
+        vokaler=["a","e","i","o","u","y","æ","ø","å"]
+        tegn = [",",".","!",':'," ","?",";","_"]
+
+        function kryptering(){
+            const inpOrd = document.getElementById("input").value.toLowerCase();
+            let kryptertOrd = "";
+            for (let i = 0; i < inpOrd.length; i++) {
+                const ord = inpOrd[i];
+                if(konsonanter.includes(ord)){
+                    const nyIndex = (konsonanter.indexOf(ord) + 3) % konsonanter.length;
+                    kryptertOrd += konsonanter[nyIndex];
+                } else if(vokaler.includes(ord)){
+                    const nyIndex = (vokaler.indexOf(ord) + 3) % vokaler.length;
+                    kryptertOrd += vokaler[nyIndex];
+                } else if(tegn.includes(ord)){
+                    kryptertOrd += tegn[(tegn.indexOf(ord) + 1) % tegn.length];
+                } else {
+                    kryptertOrd += ord;
+                }
+            }
+            document.getElementById("kryptUt").innerHTML = kryptertOrd;
+        }
+    </script>
+</body>
+</html>
