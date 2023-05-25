@@ -4,45 +4,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kryptering av ord</title>
+    <link rel="stylesheet" href="/githubnettside/jattsi/yatzee.css">
+    <title>kryptering av ord og settninger</title>
     <style>
         
     </style>
 </head>
 <body>
-    <h1>kryptering av ord</h1>
+    <div id="yatzeeTabell">
+    <h1>kryptering</h1>
+    
     <form>
-        <label for="input">legg inn ord for å kryptere:</label><br>
+        <label for="input">input</label><br>
         <input type="text" id="input" name="input"><br>
         <button type="button" onclick="kryptering()">krypter</button>
+        <button type="button" onclick="dekryptering()">dekrypter</button> <!-- New button for decryption -->
     </form>
     <br>
     <p id="kryptUt"></p>
-
+    </div>
     <script>
-        konsonanter=["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
-        vokaler=["a","e","i","o","u","y","æ","ø","å"]
-        tegn = [",",".","!",':'," ","?",";","_"]
+        let konsonanter = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x","z"];
+        let vokaler = ["a", "e", "i", "o", "u", "y", "æ", "ø", "å"];
+        let tegn = [",", ".", "!", ":", " ", "?", ";", "_"];
 
-        function kryptering(){
+        function kryptering() {
             const inpOrd = document.getElementById("input").value.toLowerCase();
             let kryptertOrd = "";
+
             for (let i = 0; i < inpOrd.length; i++) {
                 const ord = inpOrd[i];
-                if(konsonanter.includes(ord)){
-                    const nyIndex = (konsonanter.indexOf(ord) + 3) % konsonanter.length;
-                    kryptertOrd += konsonanter[nyIndex];
+                if(konsonanter.includes(ord)) {
+                    let nyIndex=konsonanter.indexOf(ord)+3;
+                    if(nyIndex>=konsonanter.length){
+                        nyIndex-=konsonanter.length;
+                    }
+                    kryptertOrd+=konsonanter[nyIndex];
                 } else if(vokaler.includes(ord)){
-                    const nyIndex = (vokaler.indexOf(ord) + 3) % vokaler.length;
-                    kryptertOrd += vokaler[nyIndex];
+                    let nyIndex=vokaler.indexOf(ord)+3;
+                    if(nyIndex>=vokaler.length){
+                        nyIndex-=vokaler.length;
+                    }
+                    kryptertOrd+=vokaler[nyIndex];
                 } else if(tegn.includes(ord)){
-                    kryptertOrd += tegn[(tegn.indexOf(ord) + 1) % tegn.length];
-                } else {
+                    let nyIndex=tegn.indexOf(ord)+1;
+                    if(nyIndex>=tegn.length){
+                        nyIndex-=tegn.length;
+                    }
+                    kryptertOrd+=tegn[nyIndex];
+                } else{
                     kryptertOrd += ord;
                 }
-            }
+            };
             document.getElementById("kryptUt").innerHTML = kryptertOrd;
-        }
+        };
+
+        function dekryptering(){
+            const inpOrd=document.getElementById("input").value.toLowerCase();
+            let dekryptertOrd= "";
+
+            for(let i=0; i<inpOrd.length; i++){
+                const ord = inpOrd[i];
+
+                if(konsonanter.includes(ord)){
+                    let nyIndex=konsonanter.indexOf(ord)-3;
+                    if(nyIndex<0){
+                        nyIndex+=konsonanter.length;
+                    }
+
+
+                    dekryptertOrd += konsonanter[nyIndex];
+                } else if(vokaler.includes(ord)){
+                    let nyIndex = vokaler.indexOf(ord)-3;
+                    if(nyIndex < 0){
+                        nyIndex += vokaler.length;
+                    }
+
+
+                    dekryptertOrd += vokaler[nyIndex];
+                } else if(tegn.includes(ord)){
+                    let nyIndex = tegn.indexOf(ord)-1;
+                    if (nyIndex < 0){
+                        nyIndex += tegn.length;
+                    }
+
+
+                    dekryptertOrd += tegn[nyIndex];
+                } else{
+                    dekryptertOrd += ord;
+                };
+            };
+            document.getElementById("kryptUt").innerHTML = dekryptertOrd;
+        };
     </script>
 </body>
 </html>
