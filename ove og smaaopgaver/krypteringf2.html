@@ -29,6 +29,11 @@
         let tegn = [",", ".", "!", ":", " ", "?", ";", "_"];
 
         function kryptering() {
+            //Funksjonen krypterrer teksten i input-feltet. den:
+            //erstatter hver konsonant med den 3. neste konsonanten i arrayen konsonanter.
+            //erstatter hver vokal med den 3. neste vokalen i arrayen vokaler.
+            //erstatter hvert tegn med det neste tegnet i arrayen tegn.
+            //Resultatet av krypteringen vises i <p> 
             const inpOrd = document.getElementById("input").value.toLowerCase();
             let kryptertOrd = "";
 
@@ -60,6 +65,7 @@
         };
 
         function dekryptering(){
+            // funksjonen gjør det motsatte av kryptering funksjonen.
             const inpOrd=document.getElementById("input").value.toLowerCase();
             let dekryptertOrd= "";
 
